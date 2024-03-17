@@ -24,6 +24,10 @@ services:
       dockerfile: ./kick/Dockerfile
     ports:
       - "7222:7222"
+    # NEW
+    environment:
+      - PEOPLE_URL=http://people:8000/view/all
+      - LOGIN_URL=http://people:8000/view/login_kick
     depends_on:
       - people
 
